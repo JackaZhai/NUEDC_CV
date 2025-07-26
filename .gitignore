@@ -237,4 +237,8 @@ desktop.ini
 logs/
 *.log
 
+# Python wheel files (including large ones)
 *.whl
+
+# Large model files and packages
+tpu_mlir-*.whl
