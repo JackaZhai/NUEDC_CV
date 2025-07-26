@@ -1,0 +1,63 @@
+# YOLOv11 训练配置文件
+# 根据你的需求修改这些参数
+
+# 数据集配置
+data:
+  path: "data/dataset.yaml"  # 数据集配置文件路径
+  nc: 1                      # 类别数量
+  names: ["object"]          # 类别名称
+
+# 模型配置
+model:
+  name: "yolo11n.pt"         # 预训练模型 (yolo11n/s/m/l/x.pt)
+  
+# 训练配置
+train:
+  epochs: 100                # 训练轮数
+  batch_size: 16            # 批次大小
+  imgsz: 640                # 输入图像尺寸
+  
+  # 学习率配置
+  lr0: 0.01                 # 初始学习率
+  lrf: 0.01                 # 最终学习率因子
+  momentum: 0.937           # 动量
+  weight_decay: 0.0005      # 权重衰减
+  
+  # 增强配置
+  hsv_h: 0.015              # 色调增强
+  hsv_s: 0.7                # 饱和度增强
+  hsv_v: 0.4                # 亮度增强
+  degrees: 0.0              # 旋转角度
+  translate: 0.1            # 平移比例
+  scale: 0.5                # 缩放比例
+  shear: 0.0                # 剪切角度
+  perspective: 0.0          # 透视变换
+  flipud: 0.0               # 上下翻转概率
+  fliplr: 0.5               # 左右翻转概率
+  mosaic: 1.0               # 马赛克增强概率
+  mixup: 0.0                # 混合增强概率
+  copy_paste: 0.0           # 复制粘贴增强概率
+  
+  # 正则化
+  dropout: 0.0              # Dropout概率
+  
+# 验证配置
+val:
+  batch_size: 32            # 验证批次大小
+  conf_thres: 0.001         # 置信度阈值
+  iou_thres: 0.7            # IoU阈值
+  
+# 硬件配置
+hardware:
+  device: ""                # 设备 ("", "cpu", "cuda", "0,1,2,3")
+  workers: 8                # 数据加载线程数
+  amp: true                 # 自动混合精度
+
+# 输出配置
+output:
+  project: "runs/train"     # 项目目录
+  name: "exp"               # 实验名称
+  save_period: 10           # 保存间隔 (epochs)
+  cache: true               # 缓存图像
+  plots: true               # 保存训练图表
+  verbose: true             # 详细输出
