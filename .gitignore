@@ -236,3 +236,5 @@ desktop.ini
 # Logs
 logs/
 *.log
+
+*.whl
