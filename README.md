@@ -1,14 +1,8 @@
 # NUEDC CV
 
-开源的计算机视觉工具集，服务于全国大学生电子设计竞赛（NUEDC）。
+开源的计算机视觉工具集，用于于全国大学生电子设计竞赛（NUEDC）。
 项目主要面向 **MaixCam** 平台，包含阈值调试、YOLOv11 训练与权重转换、
-激光点识别等功能模块，帮助参赛者快速构建和部署视觉算法。
-
-## Features
-- 📦 **YOLOv11 训练脚本**：位于 `yolo/scripts/train.py`，支持自定义数据集训练。
-- 🧮 **阈值调试与激光点识别**：适用于 MaixCam 的示例代码。
-- 🔁 **模型权重转换**：便于在嵌入式平台部署。
-- 🛠️ **丰富的工具与配置**：`yolo/` 目录下包含模型、配置及工具函数。
+激光点识别等功能模块。
 
 ## Directory Structure
 ```
@@ -40,33 +34,9 @@ NUEDC_CV/
 └── README.md                           # 项目说明文档
 ```
 
-## Requirements
-- Python ≥ 3.8
-- [PyTorch](https://pytorch.org/)
-- [Ultralytics](https://github.com/ultralytics/ultralytics)
-
-```bash
-pip install torch ultralytics
-```
-
-## Quick Start
-1. 克隆仓库
-   ```bash
-   git clone https://github.com/<your-name>/NUEDC_CV.git
-   cd NUEDC_CV
-   ```
-2. 安装依赖（见上）
-3. 训练模型
-   ```bash
-   python yolo/scripts/train.py --data path/to/data.yaml --model yolo/yolo11n.pt --epochs 100
-   ```
 
 ## Contributing
 欢迎通过 Issue 或 Pull Request 贡献代码、文档或功能建议。
 
 ## License
 本项目采用 [Apache License 2.0](./LICENSE) 许可协议。
-
-## Acknowledgements
-感谢 Ultralytics 团队提供的 YOLO 框架以及社区的贡献。
-
